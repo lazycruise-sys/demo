@@ -17,6 +17,8 @@ Here, you get to understand the basics and probably the intricacies of how to de
 
 ### Learn the Fundamentals of the Language
 
+Go through the basics of go such as variables, functions, data types, conditionals, classes, inheritance, scope.
+
 ### Build based on the Fundamentals
 
 ### Learn a Subsection
