@@ -13,6 +13,8 @@ The mathematics here includes algebra, calculus and mathematical induction.
 
 ### Learn Algorithm and Data Structure
 
+Here, you get to understand the basics and probably the intricacies of how to design better algorithms and use the right data structures to build your small, medium or big softwares.
+
 ### Learn the Fundamentals of the Language
 
 ### Build based on the Fundamentals
