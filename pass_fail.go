@@ -12,18 +12,43 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"os"
 	"log"
-	"reflect"
+	"os"
+
+	// "reflect"
+	"strconv"
+	"strings"
 )
 
 func main() {
+
+	// collecting data from keyboard
 	fmt.Print("Enter a grade: ")
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(input)
-	fmt.Println(reflect.TypeOf(reader))
+
+	// removing spaces and newline to enable conversion to other type
+	input = strings.TrimSpace(input)
+
+	// converting to input data to float64 using the strconv package which takes the number of bits
+	grade, err := strconv.ParseFloat(input, 64)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// conditional statement to compare the grade variable to determine the pass/fail status
+	if grade >= 60 {
+		status := "passing"
+	} else {
+		status := "failing"
+	}
+
+	fmt.Println("A grade of", grade, "is", status)
+
+	// fmt.Println(input)
+	// fmt.Println(reflect.TypeOf(reader))
+
 }
