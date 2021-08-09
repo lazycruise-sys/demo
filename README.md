@@ -27,6 +27,6 @@ Go through the basics of go such as variables, functions, data types, conditiona
 
 ### Build continuously, Learn fervently
 
-### Always use the psuedocoding
+### Always use the psuedocoding, it is better
 
 ## Why this is a Lazy approach?
