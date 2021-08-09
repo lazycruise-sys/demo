@@ -40,10 +40,11 @@ func main() {
 	}
 
 	// conditional statement to compare the grade variable to determine the pass/fail status
+	var status string
 	if grade >= 60 {
-		status := "passing"
+		status = "passing"
 	} else {
-		status := "failing"
+		status = "failing"
 	}
 
 	fmt.Println("A grade of", grade, "is", status)
