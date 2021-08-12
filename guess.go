@@ -26,30 +26,43 @@ func main() {
 	fmt.Println(target) // for debugging purpose
 
 	reader := bufio.NewReader(os.Stdin) // lets us read keyboard input (creates a bufio.Reader value)
-	fmt.Println("Make your guess?")
-	input, err := reader.ReadString('\n') // reads what the user types up until they press Enter
-	if err != nil {
-		log.Fatal(err) // closes program if an erro exists
-	}
-
-	input = strings.TrimSpace(input)  // removes newline(\n)
-	guess, err := strconv.Atoi(input) // converts string to integer
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// 03. if player's guess is greater or less than target indicate to the user.
-
-	if guess < target {
-		fmt.Println("oops! your guess was LOW")
-	} else if guess > target {
-		fmt.Println("oops! your guess was HIGH")
-	}
+	success := false
 
 	// 04. allow the player to guess up to 10 times and indicate the number of guesses left
+	for guesses := 0; guesses <= 10; guesses++ {
+		fmt.Println("You have", 10-guesses, "guesses left.")
+		fmt.Println("Make your guess?")
 
-	// 05. if player's guess is correct, indicate to them and stop the loop
+		input, err := reader.ReadString('\n') // reads what the user types up until they press Enter
+		if err != nil {
+			log.Fatal(err) // closes program if an error exists
+		}
+
+		input = strings.TrimSpace(input)  // removes newline(\n)
+		guess, err := strconv.Atoi(input) // converts string to integer
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// 03. if player's guess is greater or less than target indicate to the user.
+
+		if guess < target {
+			fmt.Println("oops! your guess was LOW")
+			success = false
+		} else if guess > target {
+			fmt.Println("oops! your guess was HIGH")
+			success = false
+		} else if guess == target {
+			// 05. if player's guess is correct, indicate to them and stop the loop
+			fmt.Println("you have guessed correctly!")
+			success = true
+			break
+		}
+	}
 
 	// 06. if player runs out of turns with no correct guesses, indicate to the user and show the correct number
+	if success == false {
+		fmt.Println("sorry. you didn't guess the number. it was", target)
+	}
 
 }
