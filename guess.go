@@ -23,13 +23,14 @@ func main() {
 	// 02. prompt the player to guess what the target number is, and store their response.
 	fmt.Println("we have selected a number between 0 and 100")
 	fmt.Println("can you guess the number?")
-	fmt.Println(target) // for debugging purpose
+	// fmt.Println(target) // for debugging purpose
 
 	reader := bufio.NewReader(os.Stdin) // lets us read keyboard input (creates a bufio.Reader value)
 	success := false
 
 	// 04. allow the player to guess up to 10 times and indicate the number of guesses left
 	for guesses := 0; guesses <= 10; guesses++ {
+		fmt.Println("--------------------") // demarcation of the different tries
 		fmt.Println("You have", 10-guesses, "guesses left.")
 		fmt.Println("Make your guess?")
 
