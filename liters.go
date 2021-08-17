@@ -5,6 +5,10 @@ import (
 )
 func sayHi()  {
 	fmt.Println("hi!")
+
+func liters() {
+	
+}
 }
 func main() {
 	var width, length, area float64
