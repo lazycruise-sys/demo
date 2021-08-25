@@ -10,47 +10,17 @@ for processing widgets.
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"github.com/lazycruise-sys/keyboard"
 	"log"
-	"os"
-
-	// "reflect"
-	"strconv"
-	"strings"
 )
 
-func getFloat() (float64, error) {
-	// collecting data from keyboard
-	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		return 0, err
-	}
-
-	// removing spaces and newline to enable conversion to other type
-	input = strings.TrimSpace(input)
-
-	// converting to input data to float64 using the strconv package which takes the number of bits
-	number, err := strconv.ParseFloat(input, 64)
-	if err != nil {
-		return 0, err
-	}
-
-	// limit the input to between 0 and 100
-	if number > 100 {
-		err = fmt.Errorf("the number %.2f is not a gradeable number", number)
-		return 0, err
-	}
-
-	return number, nil
-}
 
 func main() {
 
 	// collecting data from keyboard
 	fmt.Print("Enter a grade: ")
-	grade, err := getFloat()
+	grade, err := keyboard.GetFloat()
 	if err != nil {
 		log.Fatal(err)
 	}
