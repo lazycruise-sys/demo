@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"time"
-	"reflect"
 )
 
 func main() {
@@ -63,10 +62,4 @@ func main() {
 		numOfBeefs += beef
 	}
 	fmt.Println(numOfBeefs)
-
-	fmt.Println(reflect.TypeOf(primes))
-	var numbers [3]float64
-	// i := 0
-	fmt.Println(numbers)
-	fmt.Println(reflect.TypeOf(numbers))
 }
