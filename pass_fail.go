@@ -10,31 +10,17 @@ for processing widgets.
 package main
 
 import (
-	"bufio"
 	"fmt"
+	"github.com/lazycruise-sys/keyboard"
 	"log"
-	"os"
-
-	// "reflect"
-	"strconv"
-	"strings"
 )
+
 
 func main() {
 
 	// collecting data from keyboard
 	fmt.Print("Enter a grade: ")
-	reader := bufio.NewReader(os.Stdin)
-	input, err := reader.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// removing spaces and newline to enable conversion to other type
-	input = strings.TrimSpace(input)
-
-	// converting to input data to float64 using the strconv package which takes the number of bits
-	grade, err := strconv.ParseFloat(input, 64)
+	grade, err := keyboard.GetFloat()
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -7,13 +7,9 @@ import (
 
 func main() {
 
-	// declaring and initializing array
+  // declaring and initializing array
 	notes := [7]string{"do", "re", "mi", "fa", "so", "la", "ti"}
 	fmt.Println(notes)
-
-	var dates [3]time.Time
-	dates[0] = time.Unix(3289239010, 0)
-	fmt.Println(dates[0])
 
 	var primes [5]int
 	primes[0] = 2
@@ -22,6 +18,7 @@ func main() {
 	fmt.Println(primes)
 	primes[1]++
 	fmt.Println(primes)
+
 
 	names := [3]string{"akinlua", "olorunfemi", "praise"}
 	fmt.Println(names)
