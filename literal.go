@@ -29,7 +29,6 @@ func main() {
 
 	fmt.Println(text)
 	fmt.Printf("%#v\n", text)
-	fmt.Println(len(dates))
 
 	// typical for loop structure involving arrays
 	for i := 0; i < len(notes); i++ {
