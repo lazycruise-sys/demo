@@ -69,4 +69,9 @@ func main() {
 	fmt.Println(dce01, ok)
 	fmt.Println(evidences)
 
+	anoda()
+	for evidenceName, evidenceNum := range evidences {
+		fmt.Printf("%s has %d evidences within it.\n", evidenceName, evidenceNum)
+	}
+
 }
