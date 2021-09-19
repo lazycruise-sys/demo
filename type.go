@@ -31,4 +31,15 @@ func main() {
 	trainFuel := Liters(4560.0)            // short variable declarations together with type conversion
 	fmt.Println(trainFuel)                 // printing variable trainFuel
 	fmt.Println(reflect.TypeOf(trainFuel)) // checking type
+
+	// golang only considers the value of the underlying type of float64
+	// therefore, there is no difference between Gallons(Liters(240.0))
+	// and Gallons(240.0)
+	testFuel := Gallons(13.45)
+	carFuel = Gallons(Liters(40.0))
+	busFuel = Liters(testFuel)
+
+	fmt.Println(carFuel, busFuel)
+	fmt.Println(Gallons(63.0), reflect.TypeOf(Gallons(63.0)))
+
 }
