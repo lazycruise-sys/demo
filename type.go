@@ -8,6 +8,7 @@ import (
 // defined type declaration
 type Liters float64
 type Gallons float64
+type Title string
 type Car struct {
 	Name       string
 	TopSpeed   float64
@@ -16,7 +17,7 @@ type Car struct {
 
 func main() {
 	// initialization of fuel variable
-	var fuel float64 = 10 // this doesn't show  or tell whether it is in liter or gallons
+	var fuel float64 = 10 // this doesn't show  or tell whether it is in liter or gallonsGallons
 	fmt.Println(fuel)
 
 	// using defined types, liter and gallon
@@ -41,5 +42,21 @@ func main() {
 
 	fmt.Println(carFuel, busFuel)
 	fmt.Println(Gallons(63.0), reflect.TypeOf(Gallons(63.0)))
+
+	// converting from liters to gallons
+	carFuel = Gallons(Liters(40.0) * 0.264)
+	busFuel = Liters(Gallons(63.0) * 3.785)
+	fmt.Printf("gallons: %.1f, liters: %.1f\n", carFuel, busFuel)
+
+	// defined types and operators
+	fmt.Println(Liters(1.2) + Liters(3.4))
+	fmt.Println(Gallons(5.5) - Gallons(3.4))
+	fmt.Println(Liters(2.2) / Liters(1.1))
+	fmt.Println(Gallons(1.2) == Gallons(3.4))
+	fmt.Println(Liters(1.2) < Liters(3.4))
+	fmt.Println(Liters(1.2) > Liters(3.4))
+
+	fmt.Println(Title("allen") == Title("allen"))
+	fmt.Println(Title("allen") > Title("zodiac"))
 
 }
